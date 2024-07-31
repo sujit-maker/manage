@@ -53,7 +53,7 @@ const SitesPage = () => {
     }, [sites]);
 
     const fetchSites = () => {
-        axios.get('http://localhost:3000/api/sites')
+        axios.get('dev.openwi.co.in/api/sites')
             .then((response) => {
                 setSites(response.data);
             })
@@ -63,7 +63,7 @@ const SitesPage = () => {
     };
 
     const fetchCustomers = () => {
-        axios.get('http://localhost:3000/api/customers') // Adjust the endpoint as necessary
+        axios.get('dev.openwi.co.in/api/customers') // Adjust the endpoint as necessary
             .then((response) => {
                 setCustomers(response.data);
             })
@@ -78,7 +78,7 @@ const SitesPage = () => {
     };
 
     const handleDeleteConfirm = () => {
-        axios.delete(`http://localhost:3000/api/sites/${selectedSite.id}`)
+        axios.delete(`dev.openwi.co.in/api/sites/${selectedSite.id}`)
             .then(() => {
                 fetchSites();
                 setOpenDeleteDialog(false);
@@ -105,7 +105,7 @@ const SitesPage = () => {
             return;
         }
 
-        axios.put(`http://localhost:3000/api/sites/${selectedSite.id}`, selectedSite)
+        axios.put(`dev.openwi.co.in/api/sites/${selectedSite.id}`, selectedSite)
             .then(() => {
                 fetchSites();
                 setOpenEditDialog(false);
@@ -141,7 +141,7 @@ const SitesPage = () => {
             return;
         }
 
-        axios.post('http://localhost:3000/api/sites', newSite)
+        axios.post('dev.openwi.co.in/api/sites', newSite)
             .then(() => {
                 fetchSites();
                 setOpenAddDialog(false);

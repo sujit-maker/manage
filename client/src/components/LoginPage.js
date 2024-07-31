@@ -25,7 +25,7 @@ const LoginPage = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:3000/login', { username, password });
+      const res = await axios.post('http://dev.openwi.co.in/login', { username, password });
       const { token, usertype } = res.data;
       localStorage.setItem('token', token);
 

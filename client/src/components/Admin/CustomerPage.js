@@ -49,7 +49,7 @@
         }, [customers]);
 
         const fetchCustomers = () => {
-            axios.get('http://localhost:3000/api/customers')
+            axios.get('dev.openwi.co.in/api/customers')
                 .then((response) => {
                     setCustomers(response.data);
                 })
@@ -66,7 +66,7 @@
         const handleDeleteConfirm = () => {
             if (!selectedCustomer) return;
         
-            axios.delete(`http://localhost:3000/api/customers/${selectedCustomer.id}`)
+            axios.delete(`dev.openwi.co.in/api/customers/${selectedCustomer.id}`)
                 .then(() => {
                     fetchCustomers();
                     setOpenDeleteDialog(false);
@@ -96,7 +96,7 @@
                 return;
             }
         
-            axios.put(`http://localhost:3000/api/customers/${selectedCustomer.id}`, selectedCustomer)
+            axios.put(`dev.openwi.co.in/api/customers/${selectedCustomer.id}`, selectedCustomer)
                 .then(() => {
                     fetchCustomers();
                     setOpenEditDialog(false);
@@ -131,7 +131,7 @@
                 return;
             }
 
-            axios.post('http://localhost:3000/api/customers', newCustomer)
+            axios.post('dev.openwi.co.in/api/customers', newCustomer)
                 .then(() => {
                     fetchCustomers();
                     setOpenAddDialog(false);
@@ -183,6 +183,8 @@
                         Add Customer
                     </Button>
                 </Grid>
+
+
                 <Grid item xs={12} md={10} lg={8}>
                     <TextField
                         label="Search....."
@@ -199,6 +201,8 @@
                         style={{ margin: 10, marginRight: '270px', float: 'right', marginTop: '-35px' }}
                     />
                 </Grid>
+
+
                 <Grid container justifyContent="center">
                     <StyledTableContainer component={Paper}>
                         <Table aria-label="simple table">
@@ -241,8 +245,11 @@
                                             </StyledTableContainer>
                                         </Grid>
                             
-                                        {/* Add Customer Dialog */}
-                                        <Dialog open={openAddDialog} onClose={handleAddDialogClose}>
+
+
+                   {/* Add Customer Dialog */}
+
+                   <Dialog open={openAddDialog} onClose={handleAddDialogClose}>
                     <DialogTitle>Add New Customer</DialogTitle>
                     <DialogContent>
                         <TextField
@@ -329,6 +336,7 @@
                 </Dialog>
 
                 {/* Edit Customer Dialog */}
+
                 <Dialog open={openEditDialog} onClose={handleEditDialogClose}>
                     <DialogTitle>Edit Customer</DialogTitle>
                     <DialogContent>
@@ -410,6 +418,7 @@
                 </Dialog>
 
                 {/* Delete Customer Dialog */}
+                
                 <Dialog open={openDeleteDialog} onClose={() => setOpenDeleteDialog(false)}>
                     <DialogTitle>Confirm Delete</DialogTitle>
                     <DialogContent>

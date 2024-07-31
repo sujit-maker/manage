@@ -47,7 +47,7 @@ const ServicesDashboard = () => {
     }, [services]);
 
     const fetchServices = () => {
-        axios.get('http://localhost:3000/api/services')
+        axios.get('dev.openwi.co.in/api/services')
             .then((response) => {
                 setServices(response.data);
             })
@@ -62,7 +62,7 @@ const ServicesDashboard = () => {
     };
 
     const handleDeleteConfirm = () => {
-        axios.delete(`http://localhost:3000/api/services/${selectedService.id}`)
+        axios.delete(`dev.openwi.co.in/api/services/${selectedService.id}`)
             .then(() => {
                 fetchServices();
                 setOpenDeleteDialog(false);
@@ -90,7 +90,7 @@ const ServicesDashboard = () => {
             return;
         }
     
-        axios.put(`http://localhost:3000/api/services/${selectedService.id}`, selectedService)
+        axios.put(`dev.openwi.co.in/api/services/${selectedService.id}`, selectedService)
             .then(response => {
                 fetchServices();  // Refresh services data after update
                 setOpenEditDialog(false);  // Close edit dialog
@@ -158,7 +158,7 @@ const ServicesDashboard = () => {
             return;
         }
 
-        axios.post('http://localhost:3000/api/services', newService)
+        axios.post('dev.openwi.co.in/api/services', newService)
             .then(() => {
                 fetchServices();
                 setOpenAddDialog(false);

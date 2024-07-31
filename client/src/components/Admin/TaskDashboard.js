@@ -54,7 +54,7 @@ const TaskDashboard = () => {
     }, []);
 
     const fetchTasks = () => {
-        axios.get('http://localhost:3000/api/tasks')
+        axios.get('dev.openwi.co.in/api/tasks')
             .then((response) => {
                 setTasks(response.data);
                 setFilteredSites(response.data); // Initialize filteredSites with all tasks
@@ -65,7 +65,7 @@ const TaskDashboard = () => {
     };
 
     const fetchCustomers = () => {
-        axios.get('http://localhost:3000/api/customers')
+        axios.get('dev.openwi.co.in/api/customers')
             .then((response) => {
                 setCustomers(response.data);
             })
@@ -75,7 +75,7 @@ const TaskDashboard = () => {
     };
 
     const fetchSites = () => {
-        axios.get('http://localhost:3000/api/sites')
+        axios.get('dev.openwi.co.in/api/sites')
             .then((response) => {
                 setSites(response.data);
             })
@@ -85,7 +85,7 @@ const TaskDashboard = () => {
     };
 
     const fetchServices = () => {
-        axios.get('http://localhost:3000/api/services')
+        axios.get('dev.openwi.co.in/api/services')
             .then((response) => {
                 setServices(response.data);
             })
@@ -121,7 +121,7 @@ const TaskDashboard = () => {
     const handleDeleteClick = (task) => {
         const confirmDelete = window.confirm(`Are you sure you want to delete task ID ${task.id}?`);
         if (confirmDelete) {
-            axios.delete(`http://localhost:3000/api/tasks/${task.id}`)
+            axios.delete(`dev.openwi.co.in/api/tasks/${task.id}`)
                 .then(() => {
                     fetchTasks();
                     alert('Task deleted successfully!');
@@ -159,7 +159,7 @@ const TaskDashboard = () => {
             return;
         }
 
-        axios.post('http://localhost:3000/api/tasks', newTask)
+        axios.post('dev.openwi.co.in/api/tasks', newTask)
             .then(() => {
                 fetchTasks();
                 setOpenAddDialog(false);
@@ -186,7 +186,7 @@ const TaskDashboard = () => {
             return;
         }
 
-        axios.put(`http://localhost:3000/api/tasks/${selectedTask.id}`, selectedTask)
+        axios.put(`dev.openwi.co.in/api/tasks/${selectedTask.id}`, selectedTask)
             .then(() => {
                 fetchTasks();
                 setOpenEditDialog(false);

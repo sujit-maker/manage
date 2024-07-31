@@ -155,7 +155,7 @@ export default function MiniDrawer() {
     const payload = { newPassword: newPasswordValue };
   
     try {
-      const response = await fetch('http://localhost:3000/change-password', {
+      const response = await fetch('http://dev.openwi.co.in/change-password', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
