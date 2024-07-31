@@ -1,0 +1,92 @@
+/* LoginPage.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .login-bg {
+    background: linear-gradient(135deg, #b294b8, #ab93b3), url('https://source.unsplash.com/1600x900/?technology');
+    background-size: cover;
+    background-position: center;
+    animation: backgroundAnimation 10s ease-in-out infinite;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% { background-position: center; }
+    50% { background-position: top; }
+    100% { background-position: center; }
+  }
+  
+  .login-card {
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(32, 26, 26, 0.9);
+    animation: cardFadeIn 1s ease-in-out;
+  }
+  
+  @keyframes cardFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .login-btn {
+    background: #ff416c;
+    border: none;
+    transition: background 0.3s ease;
+    border-radius: 50px;
+  }
+  
+  .login-btn:hover {
+    background: #2ba0ff;
+  }
+  
+  .input-group-text {
+    background: #2a5298;
+    border: none;
+    color: white;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #ff416c;
+  }
+  
+  .rounded-input .form-control {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .input-group-text:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    cursor: pointer;
+  }
+  .card-title{
+    color:#ff416c;
+    text-wrap-style: bold;
+  }
+
+  .form-label {
+    color: #f0eff3;
+  }
+  
